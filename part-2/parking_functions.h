@@ -1,4 +1,7 @@
-// TODO: Add the required header
+// Kaleb Robles
+// kkrobles@csu.fullerton.edu
+// @Kaleb16
+// Partners: @HiepSolivan
 
 #ifndef PARKING_FUNCTIONS_H
 #define PARKING_FUNCTIONS_H
