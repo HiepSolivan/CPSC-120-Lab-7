@@ -1,4 +1,7 @@
-// TODO: Add the required header
+// Solivan Hiep
+// HiepSolivan@csu.fullerton.edu
+// @HiepSolivan
+// Partners: @Kaleb16
 
 //
 // Program to calculate the date between two Gregorian dates.
@@ -24,22 +27,29 @@ int JulianDay(int month, int day, int year) {
   // from a Gregorian date.
   // (See https://github.com/indigo-astronomy/novas/blob/master/src/lib/novas.c,
   // line 9200)
-  // TODO: Use the formula specified in the README to convert a Gregorian date
-  // (12/25/2023) to a Julian Day.
-  // TODO: Update the return to return the calculated Julian Day.
-  return 0;
+  // DONE: Update the return to return the calculated Julian Day.
+
+  int julian_day = day - 32075 + 1461 * (year + 4800 + (month - 14) / 12) / 4 +
+                   367 * (month - 2 - (month - 14) / 12 * 12) / 12 -
+                   3 * ((year + 4900 + (month - 14) / 12) / 100) / 4;
+  return julian_day;
 }
 
 // Return the number of days between a start date and end date.
 int DateDifference(int start_month, int start_day, int start_year,
                    int end_month, int end_day, int end_year) {
-  // TODO: Given two dates, find each date's Julian day using the JulianDay()
+  // DONE: Given two dates, find each date's Julian day using the JulianDay()
   // function. Return the difference between the end date and the start date.
-  return 0;
+  int start_julian_day{JulianDay(start_month, start_day, start_year)};
+  int end_julian_day{JulianDay(end_month, end_day, end_year)};
+  int julian_difference{end_julian_day - start_julian_day};
+
+  return julian_difference;
 }
 
 void PrintDate(int month, int day, int year) {
-  // TODO: Using std::cout, display the integers passed to the function
+  // DONE: Using std::cout, display the integers passed to the function
   // as a formatted date such as mm/dd/yyyy where mm is the month,
   // dd is the day, and yyyy is the year such as 12/25/2023.
+  std::cout << month << "/" << day << "/" << year;
 }
