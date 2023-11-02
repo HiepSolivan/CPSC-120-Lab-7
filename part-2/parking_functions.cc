@@ -33,7 +33,7 @@ bool CanParkOnDate(const std::string& day, int hour, int min) {
   if (day == "sat" || day == "sun" ||
       ((day == "mon" || day == "tue" || day == "wed" || day == "thu" ||
         day == "fri") &&
-       ((hour == 6 && min < 30) || (hour < 6) || (hour >= 16 && min >= 0)))) {
+       ((hour == 6 && min < 30) || (hour < 6) || (hour >= 16)))) {
     return true;
   } else {
     return false;
@@ -41,9 +41,10 @@ bool CanParkOnDate(const std::string& day, int hour, int min) {
 }
 
 bool CanParkOnElm(const std::string& day, int hour) {
-  if (((day == "mon" || day == "wed" || day == "thu") &&
+  if ((day == "tue") ||
+      ((day == "mon" || day == "wed" || day == "thu") &&
        (hour >= 8 && hour < 20)) ||
-      ((day == "fri") || ((hour <= 8 || hour >= 17)) || (day == "tue"))) {
+      ((day == "fri") && (hour >= 8 && hour < 17))) {
     return false;
   } else {
     return true;

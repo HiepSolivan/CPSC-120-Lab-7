@@ -42,21 +42,22 @@ int main(int argc, char* argv[]) {
   }
   bool parking_allowed = true;
 
-  if (street == "Ash") {
+  if (street == "ash") {
     parking_allowed = CanParkOnAsh(day, hour);
-  } else if (street == "Beech") {
+  } else if (street == "beech") {
     parking_allowed = CanParkOnBeech(day, hour);
-  } else if (street == "Cedar") {
+  } else if (street == "cedar") {
     parking_allowed = CanParkOnCedar(day, hour);
-  } else if (street == "Date") {
+  } else if (street == "date") {
     parking_allowed = CanParkOnDate(day, hour, minute);
-  } else if (street == "Elm") {
+  } else if (street == "elm") {
     parking_allowed = CanParkOnElm(day, hour);
   }
+
   if (parking_allowed) {
-    std::cout << "not allowed\n";
-  } else {
     std::cout << "allowed\n";
+  } else {
+    std::cout << "not allowed\n";
 
     return 0;
   }
